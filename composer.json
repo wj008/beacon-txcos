@@ -1,0 +1,24 @@
+{
+  "name": "wj008/beacon-txcos",
+  "type": "beacon-widget",
+  "minimum-stability": "stable",
+  "description": "beacon txcos upFile widget",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "wj008",
+      "email": "26029682@qq.com"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "wj008/installer": "^1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "beacon\\widget\\": "/widget",
+      "tool\\support\\": "/tool/support",
+      "app\\service\\controller\\": "/controller"
+    }
+  }
+}
