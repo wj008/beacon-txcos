@@ -225,8 +225,8 @@ class Txcos extends Controller
         $signKey = hash_hmac("sha1", $qKeyTime, $SecretKey);
         // 步骤二：构成 FormatString
         $formatString = implode("\n", array(strtolower($method), $pathname, obj2str($query), obj2str($headers), ''));
-        header('x-test-method', $method);
-        header('x-test-pathname', $pathname);
+        //header('x-test-method', $method);
+        //header('x-test-pathname', $pathname);
         // 步骤三：计算 StringToSign
         $stringToSign = implode("\n", array('sha1', $qSignTime, sha1($formatString), ''));
         // 步骤四：计算 Signature
