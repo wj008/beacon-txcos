@@ -2,6 +2,7 @@
 
 namespace tool\support;
 
+use beacon\core\Field;
 use beacon\core\Form;
 use beacon\widget\Number;
 use beacon\widget\Text;
@@ -54,6 +55,12 @@ class CosFile
     )]
     public string $nameInput = '';
 
+    #[Text(
+        label: '文件上传路径',
+        prompt: '设置文件上传到COS的目录',
+    )]
+    public string $folder = '';
+
     public function export(): array
     {
         return [
@@ -61,6 +68,7 @@ class CosFile
             'extensions' => $this->extensions,
             'size' => $this->size,
             'nameInput' => $this->nameInput,
+            'folder' => $this->folder,
         ];
     }
 }

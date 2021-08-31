@@ -56,6 +56,11 @@ class CosImage
     )]
     public int $size = 0;
 
+    #[Text(
+        label: '图片上传路径',
+        prompt: '设置图片上传到COS的目录',
+    )]
+    public string $folder = '';
 
     public function export(): array
     {
@@ -65,6 +70,7 @@ class CosImage
             'imgWidth' => $this->imgWidth,
             'imgHeight' => $this->imgHeight,
             'size' => $this->size,
+            'folder' => $this->folder,
         ];
     }
 }
