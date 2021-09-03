@@ -13,7 +13,7 @@ class CosImage extends Field
     public int $imgWidth = 0;
     public int $imgHeight = 0;
     public int $size = 0;
-
+    public string $folder;
 
     public function setting(array $args)
     {
@@ -32,6 +32,9 @@ class CosImage extends Field
         }
         if (isset($args['imgHeight']) && is_int($args['imgHeight'])) {
             $this->imgHeight = $args['imgHeight'];
+        }
+        if (isset($args['folder']) && is_string($args['folder'])) {
+            $this->folder = $args['folder'];
         }
     }
 
@@ -72,6 +75,9 @@ class CosImage extends Field
             if (empty($attrs['data-img-height'])) {
                 $attrs['data-img-height'] = 100;
             }
+        }
+        if (!empty($this->folder)) {
+            $attrs['data-folder'] = $this->folder;
         }
         return static::makeTag('input', ['attrs' => $attrs]);
     }

@@ -1,4 +1,5 @@
 <?php
+
 namespace beacon\widget;
 
 
@@ -12,6 +13,7 @@ class CosFile extends Field
     public string $extensions = '';
     public string $nameInput = '';
     public int $size = 0;
+    public string $folder;
     /**
      * @var bool 开启文档转换
      */
@@ -34,6 +36,9 @@ class CosFile extends Field
         }
         if (isset($args['convert']) && is_bool($args['convert'])) {
             $this->convert = $args['convert'];
+        }
+        if (isset($args['folder']) && is_string($args['folder'])) {
+            $this->folder = $args['folder'];
         }
     }
 
@@ -59,6 +64,9 @@ class CosFile extends Field
         }
         if (!empty($this->extensions)) {
             $attrs['data-extensions'] = $this->extensions;
+        }
+        if (!empty($this->folder)) {
+            $attrs['data-folder'] = $this->folder;
         }
         return static::makeTag('input', ['attrs' => $attrs]);
     }
