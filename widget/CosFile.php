@@ -19,7 +19,7 @@ class CosFile extends Field
      */
     public bool $convert = true;
 
-    public function setting(array $args)
+    public function setting(array $args): void
     {
         parent::setting($args);
         if (isset($args['mode']) && is_string($args['mode'])) {
