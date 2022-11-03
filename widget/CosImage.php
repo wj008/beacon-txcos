@@ -15,7 +15,7 @@ class CosImage extends Field
     public int $size = 0;
     public string $folder;
 
-    public function setting(array $args)
+    public function setting(array $args): void
     {
         parent::setting($args);
         if (isset($args['mode']) && is_string($args['mode'])) {

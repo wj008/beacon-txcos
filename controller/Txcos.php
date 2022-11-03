@@ -21,7 +21,7 @@ class Txcos extends Controller
         ksort($obj);
         $arr = array();
         foreach ($obj as $key => $val) {
-            array_push($arr, $key . '=' . $val);
+            $arr[] = $key . '=' . $val;
         }
         return join('&', $arr);
     }
@@ -244,6 +244,11 @@ class Txcos extends Controller
         return $authorization;
     }
 
+    /**
+     * @param string $method
+     * @param string $pathname
+     * @return array
+     */
     #[Method(act: 'auth', method: Method::GET | Method::POST, contentType: 'json')]
     public function auth(string $method = 'get', string $pathname = '/')
     {
